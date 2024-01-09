@@ -17,7 +17,7 @@ function NavBar() {
         </div>
         <div className="flex">
             <button className="btn  text-[#38ACFF] border-none hover:text-blue-950 mr-5">Sign in</button>
-            <button className="btn  text-[#38ACFF]  hover:text-blue-950 mr-5 border-2 border-[#38ACFF] rounded-[30px] "> Sign up</button>
+            <button className="btn  text-[#38ACFF] border-none hover:text-blue-950 mr-5"> Sign up</button>
         </div>
 
       </div>
