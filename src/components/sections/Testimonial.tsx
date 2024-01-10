@@ -10,6 +10,7 @@ function Testimonial() {
           alt="testimonial"
           width="1200"
           height="628"
+          className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700"
         />
       </div>
     </div>

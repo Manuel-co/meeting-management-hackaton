@@ -9,9 +9,9 @@ function How() {
           How It Works
         </div>
         <div className=" grid grid-cols-3 gap-4 ">
-          <Image src="/img/how-1.png" alt="Logo" width="397" height="300" />
-          <Image src="/img/how-2.png" alt="Logo" width="397" height="300" />
-          <Image src="/img/how-3.png" alt="Logo" width="397" height="300" />
+          <Image src="/img/how-1.png" alt="Logo" width="397" height="300" className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700"/>
+          <Image src="/img/how-2.png" alt="Logo" width="397" height="300" className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700"/>
+          <Image src="/img/how-3.png" alt="Logo" width="397" height="300" className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700"/>
         </div>
       </div>
     </div>

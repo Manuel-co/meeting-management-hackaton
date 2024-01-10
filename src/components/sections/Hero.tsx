@@ -7,7 +7,7 @@ function Hero() {
       <div className="px-16 py-10">
         <div className="flex justify-between items-center">
           <div className="flex flex-col gap-10">
-            <p className="text-6xl font-medium ">
+            <div className="text-6xl font-medium ">
               <div className="text-[#5D5DFF]">Seamless</div>
               <div className="text-[#002267]">
                 {" "}
@@ -15,7 +15,7 @@ function Hero() {
                 Collaboration <br />
                 for Teams
               </div>
-            </p>
+            </div>
             <p className="text-[#002267] font-[22px]">
               Join thousands of satisfied users. Try MeetHub today!
             </p>
@@ -23,7 +23,7 @@ function Hero() {
               Schedule your first Meeting
             </button>
           </div>
-          <Image src="/img/heroimage.png" alt="Hero" width="732" height="598" />
+          <Image src="/img/heroimage.png" alt="Hero" width="732" height="598" className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700" />
         </div>
       </div>
     </div>
