@@ -16,7 +16,7 @@ const page = () => {
     <div className="container mx-auto my-10">
       <div className="px-16 py-10">
         <div className="flex justify-center items-center">
-          <Image src="/img/logins.png" alt="Hero" width="435" height="400" />
+          <Image src="/img/login.png" alt="Hero" width="435" height="400" />
           <div className="flex flex-col gap-10 mx-4  bg-white rounded-xl p-8">
             <div className="flex justify-center font-medium text-center text-[#002267]">
               <Image
