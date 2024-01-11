@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -19,9 +20,11 @@ function Hero() {
             <p className="text-[#002267] font-[22px]">
               Join thousands of satisfied users. Try MeetHub today!
             </p>
-            <button className="btn bg-[#38ACFF] text-white rounded-full border-none h-10">
+            <Link href="/meeting">
+            <button className="btn p-2 bg-[#38ACFF] text-white rounded-full border-none h-10">
               Schedule your first Meeting
             </button>
+            </Link>
           </div>
           <Image src="/img/heroimage.png" alt="Hero" width="732" height="598" className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700" />
         </div>
