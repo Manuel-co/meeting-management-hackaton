@@ -70,7 +70,7 @@ const page = () => {
               </label>
             </div>
 
-            <div className="relative z-0 w-full mb-5 group">
+            <div className="relative z-0 w-full mb-5 group flex">
               <input
                 name="floating_password"
                 id="floating_password"
@@ -87,13 +87,13 @@ const page = () => {
               </label>
 
               <button
-                className="form-icon-btn bg-black"
+                className="form-icon-btn"
                 onClick={togglePassword}
               >
                 {showPassword ? (
-                  <Eye className="form-icon__eye" />
+                  <Eye className="form-icon__eye"  color="#761e1e"/>
                 ) : (
-                  <EyeSlash className="form-icon__eye" />
+                  <EyeSlash className="form-icon__eye" color="#761e1e" />
                 )}
               </button>
             </div>
