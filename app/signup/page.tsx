@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-duplicate-props */
 "use client";
 
 import React, { useState } from "react";
