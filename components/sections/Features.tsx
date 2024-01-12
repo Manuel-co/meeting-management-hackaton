@@ -6,7 +6,13 @@ function Features() {
     <div className="container mx-auto my-10">
       <div className="px-16 py-10">
         <div className="flex justify-center gap-[45px]">
-          <Image src="/img/ftimg.png" alt="Hero" width="732" height="598"  className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700"/>
+          <Image
+            src="/img/ftimg.png"
+            alt="Hero"
+            width="732"
+            height="598"
+            className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700"
+          />
           <div className="flex flex-col gap-8">
             <div className="flex m-2 text-[#002267] text-[22px] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700">
               <Image src="/img/thumb.png" alt="Hero" width="28" height="25" />
