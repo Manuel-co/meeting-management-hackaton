@@ -141,14 +141,14 @@ export default function page() {
               name="floating_email"
               id="floating_email"
               className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-[10px] bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add title here"
+              placeholder="Add guest mail"
               required
             />
             <div className="my-12">
               <div className="text-[22px] text-[#002267]">Guest Permission</div>
-              <hr className="h-px  bg-gray-200 border-0 dark:bg-gray-700"></hr>
+              <hr className="h-px  bg-gray-200 border-2 dark:bg-gray-700 rounded"></hr>
 
-              <div className="flex flex-col gap-6  text-[#002267]">
+              <div className="flex flex-col gap-6  text-[#002267] pt-2">
                 <div className="">
                   <label className="cursor-pointer label flex gap-[8px]">
                     <span className="label-text">Modify event</span>
