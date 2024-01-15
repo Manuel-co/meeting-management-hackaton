@@ -38,16 +38,14 @@ export default function page() {
               </Link>
               <div className="border-[5px] border-[#38ACFF] rounded-[10px] flex pl-2">
                 <input
-                  name="floating_password"
                   id="floating_password"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none"
                   placeholder="Enter a code or link here "
-                  required
                 />
 
                 <button
                   type="submit"
-                  className="text-white rounded-l-[10px] text-sm px-4 py-2 bg-[#38ACFF] "
+                  className="text-white  text-sm px-4 py-2 bg-[#38ACFF] "
                 >
                   Join
                 </button>
