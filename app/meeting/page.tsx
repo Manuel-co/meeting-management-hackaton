@@ -1,66 +1,63 @@
-"use client";
+'use client'
 
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { VideoCamera } from "@phosphor-icons/react";
+import React from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { Video } from 'lucide-react'
+import { Input } from "../../components/ui/input"
+import { Button } from "../../components/ui/button"
 
-export default function page() {
+export default function MeetingPage() {
   return (
-    <div className="container mx-auto my-10">
-      <div className="px-16 py-10">
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col gap-10">
+    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
+      <div className="container mx-auto px-4 py-12 md:py-24">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="flex flex-col gap-8 max-w-2xl">
             <Image
               src="/img/logo.png"
-              alt="Hero"
-              width="231"
-              height="61"
-              className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700"
+              alt="Logo"
+              width={231}
+              height={61}
+              className="transition-transform hover:scale-105"
             />
-            <div className="text-6xl font-medium ">
-              <div className="text-[#5D5DFF]">Meeting..Scheduling..</div>
-              <div className="text-[#002267]">& Collaboration</div>
-            </div>
-            <p className="text-[#002267] font-[22px]">
-              Schedule or start an instance interaction with fellow team mates
-              now!
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+              <span className="text-blue-500">Meeting.. Scheduling..</span>
+              <br />
+              <span className="text-blue-900">& Collaboration</span>
+            </h1>
+            <p className="text-blue-700 text-lg md:text-xl">
+              Schedule or start an instant interaction with fellow team members now!
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/new-meet">
-                <button
-                  type="submit"
-                  className="text-white bg-[#38ACFF] rounded-[10px]  flex items-center gap-4 w-auto font-medium h-auto text-sm px-4 py-2"
-                >
-                  <VideoCamera size={28} />
+                <Button className="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white">
+                  <Video className="mr-2 h-5 w-5" />
                   Schedule your first Meeting
-                </button>
+                </Button>
               </Link>
-              <div className="border-[5px] border-[#38ACFF] rounded-[10px] flex pl-2">
-                <input
-                  id="floating_password"
-                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none"
-                  placeholder="Enter a code or link here "
+              <div className="flex w-full sm:w-auto">
+                <Input 
+                  placeholder="Enter a code or link here"
+                  className="rounded-r-none border-r-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                 />
-
-                <button
-                  type="submit"
-                  className="text-white  text-sm px-4 py-2 bg-[#38ACFF] "
-                >
+                <Button type="submit" className="rounded-l-none bg-blue-500 hover:bg-blue-600 text-white">
                   Join
-                </button>
+                </Button>
               </div>
             </div>
           </div>
-          <Image
-            src="/img/s-co.png"
-            alt="Hero"
-            width="544"
-            height="529"
-            className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700"
-          />
+          <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
+            <Image
+              src="/img/s-co.png"
+              alt="Collaboration"
+              width={544}
+              height={529}
+              className="transition-transform hover:scale-105 w-full h-auto"
+            />
+          </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
+

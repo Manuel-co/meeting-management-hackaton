@@ -1,192 +1,117 @@
-"use client";
+'use client'
 
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import {
-  MapPin,
-  BellRinging,
-  TextB,
-  TextItalic,
-  TextUnderline,
-  TextStrikethrough,
-} from "@phosphor-icons/react";
+import React from "react"
+import Image from "next/image"
+import { Input } from "../../components/ui/input"
+import { Button } from "../../components/ui/button"
+import { Textarea } from "../../components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../components/ui/select"
+import { Checkbox } from "../../components/ui/checkbox"
+import { Label } from "../../components/ui/label"
+import { MapPin, Bell, Bold, Italic, Underline, Strikethrough } from 'lucide-react'
 
-export default function page() {
+export default function NewMeetPage() {
   return (
-    <div className="container mx-auto my-10">
-      <div className="px-16 py-10">
-        <div className="flex justify-between items-start">
-          <div className=" flex flex-col gap-8 w-[50%] ">
-            <input
-              type="text"
-              name="floating_email"
-              id="floating_email"
-              className="block w-full p-4 ps-10 text-sm text-gray-900 border rounded-[10px] "
-              placeholder="Add title here"
-              required
-            />
-            <div className="flex relative">
-              <input
-                type="text"
-                name="floating_email"
-                id="floating_email"
-                className="block w-full p-4 pl-10 text-sm text-gray-900 border rounded-[10px] "
-                placeholder="Add Location"
-                required
-              />
-              <div className="absolute top-1/2 transform -translate-y-1/2 left-3 rounded-[10px] ">
-                <MapPin size={28} color="#002267" />
-              </div>
+    <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
+      <div className="container mx-auto my-10 px-4">
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="flex flex-col gap-6 w-full lg:w-1/2">
+            <Input placeholder="Add title here" className="text-lg" />
+            
+            <div className="relative">
+              <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500" />
+              <Input placeholder="Add Location" className="pl-10" />
             </div>
 
-            <div className="flex  gap-4 ">
-              <div className="border text-black w-[500px] justify-between flex rounded-[10px] relative">
-                <label htmlFor="Notification" className="flex items-center">
-                  <BellRinging size={28} color="#002267" className="mr-2" />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex-grow">
+                <Label htmlFor="notification" className="flex items-center gap-2 mb-2">
+                  <Bell className="text-blue-500" />
                   Email Notification
-                </label>
-                <select
-                  id="Notification"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-[10px] "
-                >
-                  <option value="On">On</option>
-                  <option value="Off">Off</option>
-                </select>
+                </Label>
+                <Select>
+                  <SelectTrigger id="notification">
+                    <SelectValue placeholder="Select" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="on">On</SelectItem>
+                    <SelectItem value="off">Off</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
-
-              <select
-                id="countries"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-[10px] w-[3rem]  h=[3rem]"
-              >
-                <option selected>5</option>
-                <option value="US">15</option>
-                <option value="CA">30</option>
-                <option value="FR">1 Hr</option>
-              </select>
-
-              <select
-                id="countries"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-[10px] w-[478px] h-[3rem] "
-              >
-                <option value="MINS">Minutes</option>
-                <option value="HRS">Hours</option>
-              </select>
+              <div className="flex-grow">
+                <Label htmlFor="reminder-time" className="mb-2">Reminder Time</Label>
+                <div className="flex gap-2">
+                  <Select>
+                    <SelectTrigger id="reminder-time">
+                      <SelectValue placeholder="5" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="5">5</SelectItem>
+                      <SelectItem value="15">15</SelectItem>
+                      <SelectItem value="30">30</SelectItem>
+                      <SelectItem value="60">60</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Minutes" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="minutes">Minutes</SelectItem>
+                      <SelectItem value="hours">Hours</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
             </div>
 
-            <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 ">
-              <div className="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
-                <label htmlFor="editor" className="sr-only">
-                  Publish post
-                </label>
-                <textarea
-                  id="editor"
-                  className="block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:outline-none dark:text-white dark:placeholder-gray-400"
-                  placeholder="Add description..."
-                  required
-                ></textarea>
-              </div>
-              <div className="flex  justify-between  border-b dark:border-gray-600">
-                <div className="flex flex-wrap  justify-center divide-gray-200 sm:divide-x sm:rtl:divide-x-reverse dark:divide-gray-600">
-                  <div className="flex items-center space-x-1 rtl:space-x-reverse sm:pe-4">
-                    <button
-                      type="button"
-                      className="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100"
-                    >
-                      <TextB size={28} color="#002267" />
-                      <span className="sr-only">Attach file</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                    >
-                      <TextItalic size={28} color="#002267" />
-                      <span className="sr-only">Embed map</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                    >
-                      <TextUnderline size={28} color="#002267" />
-                      <span className="sr-only">Upload image</span>
-                    </button>
-                    <button
-                      type="button"
-                      className="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                    >
-                      <TextStrikethrough size={28} color="#002267" />
-                      <span className="sr-only">Format code</span>
-                    </button>
-                  </div>
-                </div>
+            <div className="border rounded-lg overflow-hidden">
+              <Textarea 
+                placeholder="Add description..." 
+                className="min-h-[200px] border-0 focus:ring-0"
+              />
+              <div className="flex items-center gap-2 p-2 bg-blue-50 border-t">
+                <Button variant="ghost" size="icon"><Bold className="h-4 w-4" /></Button>
+                <Button variant="ghost" size="icon"><Italic className="h-4 w-4" /></Button>
+                <Button variant="ghost" size="icon"><Underline className="h-4 w-4" /></Button>
+                <Button variant="ghost" size="icon"><Strikethrough className="h-4 w-4" /></Button>
               </div>
             </div>
           </div>
 
-          <div className="w-[40%]">
-            <div className=" p-4">
-              <div className="text-[#002267] text-[28px] font-bold flex justify-between">
-                Guest Invite
-                <Image
-                  src="/img/logo.png"
-                  alt="Hero"
-                  width="103"
-                  height="29"
-                  className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ration-700"
-                />
-              </div>
+          <div className="w-full lg:w-1/2 lg:pl-8">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-blue-900">Guest Invite</h2>
+              <Image
+                src="/img/logo.png"
+                alt="Logo"
+                width={103}
+                height={29}
+                className="transition-transform hover:scale-105"
+              />
             </div>
-            <input
-              type="email"
-              name="floating_email"
-              id="floating_email"
-              className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-[10px] bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Add guest mail"
-              required
-            />
-            <div className="my-12">
-              <div className="text-[22px] text-[#002267]">Guest Permission</div>
-              <hr className="h-px  bg-gray-200 border-2 dark:bg-gray-700 rounded"></hr>
-
-              <div className="flex flex-col gap-6  text-[#002267] pt-2">
-                <div className="">
-                  <label className="cursor-pointer label flex gap-[8px]">
-                    <span className="label-text">Modify event</span>
-                    <input
-                      type="checkbox"
-                      className="checkbox checkbox-accent"
-                    />
-                  </label>
-                </div>
-
-                <div className="">
-                  <label className="cursor-pointer label flex gap-[8px]">
-                    <span className="label-text">Invite others</span>
-                    <input
-                      type="checkbox"
-                      className="checkbox checkbox-accent"
-                    />
-                  </label>
-                </div>
-
-                <div className="">
-                  <label className="cursor-pointer label flex gap-[8px]">
-                    <span className="label-text">See guest list</span>
-                    <input
-                      type="checkbox"
-                      className="checkbox checkbox-accent"
-                    />
-                  </label>
-                </div>
+            
+            <Input type="email" placeholder="Add guest email" className="mb-8" />
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Guest Permission</h3>
+              <hr className="mb-4" />
+              <div className="space-y-4">
+                {['Modify event', 'Invite others', 'See guest list'].map((permission) => (
+                  <div key={permission} className="flex items-center space-x-2">
+                    <Checkbox id={permission.toLowerCase().replace(' ', '-')} />
+                    <Label htmlFor={permission.toLowerCase().replace(' ', '-')}>{permission}</Label>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <button className="btn bg-[#38ACFF] w-[161px] h-[62px] rounded-[10px] ">
-              Save meeting
-            </button>
+            <Button className="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white">Save meeting</Button>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
+

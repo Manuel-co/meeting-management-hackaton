@@ -3,69 +3,76 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Menu, X } from 'lucide-react';
+import { Button } from "../../components/ui/button";
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <div className="flex items-center justify-between">
-        <Image
-          src="/img/logo.png"
-          alt="Logo"
-          width={100}
-          height={20}
-          className="transition-transform duration-300 ease-in-out hover:scale-105"
-        />
-        <button
-          className="lg:hidden p-2 text-[#002267] focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-menu"
-        >
-          {isMenuOpen ? (
-            <span className="text-3xl">&times;</span> // Close Icon
-          ) : (
-            <span className="text-3xl">&#9776;</span> // Hamburger Icon
-          )}
-        </button>
-        <nav
-          id="mobile-menu"
-          className={`fixed top-0 right-0 bg-white lg:bg-transparent lg:static lg:flex lg:flex-row lg:items-center lg:gap-10 lg:opacity-100 transition-transform duration-300 ease-in-out ${
-            isMenuOpen
-              ? 'translate-x-0 w-3/4 h-full flex flex-col justify-start p-4'
-              : 'translate-x-full'
-          } lg:translate-x-0 lg:h-auto lg:w-auto lg:flex lg:overflow-visible`}
-        >
-          <div className="lg:hidden flex justify-end w-full p-4">
-            <button
-              className="text-3xl text-[#002267] focus:outline-none"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              &times;
-            </button>
-          </div>
-          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-10 lg:mr-10 text-[#002267]">
-            <a href="#" className="py-1 lg:py-0 hover:text-blue-600">How it works</a>
-            <a href="#" className="py-1 lg:py-0 hover:text-blue-600">Testimonial</a>
-            <a href="#" className="py-1 lg:py-0 hover:text-blue-600">Features</a>
-          </div>
-          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-10 p-4 lg:p-0">
-            <Link href="/signin">
-              <button className="btn text-[#38ACFF] border-none hover:text-blue-950 py-1 lg:py-0">
-                Sign in
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="/img/logo.png"
+              alt="Logo"
+              width={100}
+              height={20}
+              className="transition-transform duration-300 ease-in-out hover:scale-105"
+            />
+          </Link>
+          <button
+            className="lg:hidden p-2 text-blue-600 hover:bg-blue-50 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          <nav
+            className={`fixed inset-y-0 right-0 z-20 w-64 bg-white shadow-xl transform transition-transform duration-300 ease-in-out lg:shadow-none lg:transform-none lg:static lg:flex lg:w-auto lg:items-center lg:space-x-8 ${
+              isMenuOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"
+            }`}
+          >
+            <div className="p-5 lg:hidden">
+              <button
+                className="absolute top-4 right-4 p-2 text-blue-600 hover:bg-blue-50 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <X size={24} />
               </button>
-            </Link>
-            <Link href="/signup">
-              <button className="btn text-[#38ACFF] border-none hover:text-blue-950 py-1 lg:py-0">
-                Sign up
-              </button>
-            </Link>
-          </div>
-        </nav>
+            </div>
+            <ul className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 p-5 lg:p-0">
+              <li>
+                <a href="#" className="text-blue-600 hover:text-blue-400 transition-colors duration-200">How it works</a>
+              </li>
+              <li>
+                <a href="#" className="text-blue-600 hover:text-blue-400 transition-colors duration-200">Testimonial</a>
+              </li>
+              <li>
+                <a href="#" className="text-blue-600 hover:text-blue-400 transition-colors duration-200">Features</a>
+              </li>
+            </ul>
+            <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 p-5 lg:p-0 mt-4 lg:mt-0">
+              <Link href="/signin">
+                <Button variant="outline" className="w-full lg:w-auto border-blue-500 text-blue-500 hover:bg-blue-50">
+                  Sign in
+                </Button>
+              </Link>
+              <Link href="/signup">
+                <Button className="w-full lg:w-auto bg-blue-500 hover:bg-blue-600 text-white">
+                  Sign up
+                </Button>
+              </Link>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
+    </header>
   );
 }
 
 export default NavBar;
+

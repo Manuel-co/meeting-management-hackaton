@@ -1,5 +1,3 @@
-"use client";
-
 import Hero from "../components/sections/Hero";
 import How from "../components/sections/How";
 import Features from "../components/sections/Features";
@@ -10,7 +8,7 @@ import Fq from "../components/sections/Fq";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="min-h-screen flex flex-col">
       <NavBar />
       <Hero />
       <How />
@@ -21,3 +19,4 @@ export default function Home() {
     </main>
   );
 }
+

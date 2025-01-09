@@ -1,34 +1,47 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="bg-[#00194D] h-[218]">
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <a
-            href="#"
-            className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
-          >
-            <Image src="/img/logo.png" alt="Logo" width="100" height="20" />
-          </a>
-          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
-            <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
-                How it works
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
-                Testimonial
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline me-4 md:me-6">
-                Features
-              </a>
-            </li>
-          </ul>
+    <footer className="bg-blue-900 text-white">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <Link href="/" className="mb-4 md:mb-0">
+            <Image src="/img/logo-white.png" alt="MeetHub Logo" width={100} height={20} />
+          </Link>
+          <nav>
+            <ul className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
+              <li>
+                <Link href="#" className="hover:text-blue-300 transition-colors duration-200">
+                  How it works
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-blue-300 transition-colors duration-200">
+                  Testimonial
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-blue-300 transition-colors duration-200">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-blue-300 transition-colors duration-200">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-blue-300 transition-colors duration-200">
+                  Terms of Service
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className="mt-8 text-center text-sm text-blue-300">
+          &copy; {new Date().getFullYear()} MeetHub. All rights reserved.
         </div>
       </div>
     </footer>
@@ -36,3 +49,5 @@ function Footer() {
 }
 
 export default Footer;
+
+
